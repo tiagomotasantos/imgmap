@@ -2886,21 +2886,6 @@ imgmap.prototype.disableSelection = function(element) {
     }
 };
 
-
-/**
- *	@date	11-02-2007 19:57:05
- *	@url	http://www.deepwood.net/writing/method-references.html.utf8
- *	@author	Daniel Brockman
- *	@addon
- */
-Function.prototype.bind = function(object) {
-	var method = this;
-	return function () {
-		return method.apply(object, arguments);
-	};
-};
-
-
 /**
  *	Trims a string.
  *	Changed not to extend String but use own function for better compatibility. 
