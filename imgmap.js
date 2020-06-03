@@ -649,8 +649,16 @@ imgmap.prototype.loadImage = function(img, imgw, imgh) {
 			q = '&';
 		}
 		this.pic.src = img + q + (new Date().getTime());
-		if (imgw && imgw > 0) {this.pic.setAttribute('width',  imgw);}
-		if (imgh && imgh > 0) {this.pic.setAttribute('height', imgh);}
+		if (imgw && imgw > 0) {
+			this.pic.setAttribute('width',  imgw);
+		} else {
+			this.pic.setAttribute('width',  '100%');
+		}
+		if (imgh && imgh > 0) {
+			this.pic.setAttribute('height', imgh);
+		} else {
+			this.pic.setAttribute('height',  '100%');
+		}
 		this.fireEvent('onLoadImage', this.pic);
 		return true;
 	}
